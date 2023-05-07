@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My Website{% endblock %}</title>
+    <title>My Webpage</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        nav {
+  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin: 0 10px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+nav a:hover {
+  color: #ccc;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+  }
+  
+  nav .menu-toggle {
+    display: block;
+    cursor: pointer;
+  }
+  
+  nav .menu-toggle:hover {
+    color: #ccc;
+  }
+  
+  nav.responsive ul {
+    display: flex;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    padding: 10px;
+  }
+  
+  nav.responsive li {
+    margin: 10px 0;
+  }
+  
+  nav.responsive a {
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+  }
+}
+
+    </style>
+    {% block css %}{% endblock %}
+</head>
+<body>
+    <header>
+        <!-- Header content here -->
+    </header>
+    <nav>
+        <nav>
+            <ul>
+                <li><a href="home">Home</a></li>
+              <li><a href="add_data">Add new book</a></li>
+              <li><a href="show">Show</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+    </nav>
+    <main>
+      {% block content %}
+      <h1>Welcome to my Library!</h1>
+      <img src="/static/library.jpg" alt="My Image">
+    {% endblock %}
+    </main>
+    <footer>
+        <!-- Footer content here -->
+    </footer>
+    {% block javascript %}{% endblock %}
+</body>
+</html>
